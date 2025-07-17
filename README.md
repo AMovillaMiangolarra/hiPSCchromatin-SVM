@@ -1,4 +1,9 @@
 # hiPSCchromatin-SVM
-Repository for code associated with the paper "Signatures of Polycomb ...", 2025
+Repository for code associated with the paper "Signatures of digital Polycomb regulation in functional iPSC heterogeneity between individuals", Movilla Miangolarra et al., 2025
+
+The Jupyter notebooks PCA.ipynb, SVM.ipynb, SVM_prediction.ipynb and Mathematical_model.ipynb provide the code to reproduce Figs. 2 to 6 in the paper.
 
 main_funcs.py contains the main functions used for the SVM-based analysis of hiPSC data (which enables downstream analysis).
+The module is separate to ease the usage of similar workflows in other datasets. Consists of four functions, grouped in pairs:
+- binarize(), which binarises transcriptomic data in order to feed it to SVM_analysis(), that will train an SVM for each gene and perform some post-processing of the resulting coefficients, to identify the regulatory logic of each gene.
+- binarize_test(), which binarises transcriptomic data for training data and test data separately and can be used as a test of the classifier. SVM_prediction() trains the SVM on the training data and returns a prediction score (between 0 and 1, Platt scaling) and a prediction (0 or 1) for each gene, which can be used to check the accuracy of the classifier (e.g. AUROC).
