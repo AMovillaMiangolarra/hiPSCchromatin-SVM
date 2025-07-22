@@ -5,7 +5,7 @@ Repository for code associated with the paper "Signatures of digital Polycomb re
 
 ### Reproducing results of the paper
 Differential expression analysis and annotation files within `Transcription` folder. To be run prior to the jupyter notebooks below, to obtain the differentially expressed genes to work with.
-The Jupyter notebooks `PCA.ipynb`, `SVM.ipynb`, `SVM_prediction.ipynb` and `Mathematical_model.ipynb` provide the code to reproduce Figs. 2 to 6 in the paper.
+The Jupyter notebooks `PCA.ipynb`, `SVM.ipynb`, `SVM_prediction.ipynb` and `Mathematical_model.ipynb` provide the code to reproduce Figs. 2 to 6 in the paper. Note that data to run this code with will be uploaded upon publication.
 
 ### Main functions -- usage in other datasets
 main_funcs.py contains the main functions used for the SVM-based analysis of hiPSC data (which enables downstream analysis).
