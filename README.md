@@ -1,5 +1,5 @@
 # hiPSCchromatin-SVM
-Repository for code associated with the paper "Signatures of digital Polycomb regulation in functional iPSC heterogeneity between individuals", Movilla Miangolarra et al., 2025
+Repository for code associated with the paper "Signatures of digital Polycomb regulation in functional iPSC heterogeneity between individuals", Movilla Miangolarra et al., 2025 (https://www.biorxiv.org/content/10.1101/2025.07.25.666753v1)
 
 ## Contents
 
