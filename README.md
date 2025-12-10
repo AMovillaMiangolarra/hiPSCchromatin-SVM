@@ -4,7 +4,7 @@ Repository for code associated with the paper "Signatures of digital Polycomb re
 ## Contents
 
 ### Reproducing results of the paper
-Differential expression analysis (for hiPSCs and pre-MEs) and annotation files within `Transcriptional_analysis` folder. To be run prior to the jupyter notebooks below, to obtain the differentially expressed genes to work with.
+Differential expression analysis (for hiPSCs and pre-MEs) and annotation files within `Transcription_analysis` folder. To be run prior to the jupyter notebooks below, to obtain the differentially expressed genes to work with.
 The Jupyter notebooks `PCA.ipynb`, `SVM.ipynb`, `SVM_prediction.ipynb` and `Mathematical_model.ipynb` provide the code to reproduce Figs. 2 to 6 in the paper. Note that data to run this code with will be uploaded upon publication.
 
 ### Main functions -- usage in other datasets
