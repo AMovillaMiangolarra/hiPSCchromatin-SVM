@@ -14,10 +14,11 @@ def binarize(df, lines):
     for i in range(df.shape[0]):
         RNA_across_lines = np.array(df[lines].iloc[i], dtype=float)
         kmeans_linear = KMeans(n_clusters=2, init="random").fit(RNA_across_lines.reshape(-1,1))
-        kmeans_linear1 = KMeans(n_clusters=1, init="random").fit(RNA_across_lines.reshape(-1,1))
+        #When computing inertia for a single cluster -trivial- one initialisation is sufficient.
+        kmeans_linear1 = KMeans(n_clusters=1, init="random", n_init=1).fit(RNA_across_lines.reshape(-1,1))
         if sum(RNA_across_lines==0)==0:
             kmeans_log = KMeans(n_clusters=2, init="random").fit(np.log(RNA_across_lines.reshape(-1,1)))
-            kmeans_log1 = KMeans(n_clusters=1, init="random").fit(np.log(RNA_across_lines.reshape(-1,1)))
+            kmeans_log1 = KMeans(n_clusters=1, init="random", n_init=1).fit(np.log(RNA_across_lines.reshape(-1,1)))
             loginertia=kmeans_log.inertia_/kmeans_log1.inertia_
         else:
             loginertia=1
@@ -35,6 +36,34 @@ def binarize(df, lines):
         for line in lines:
             df.loc[i, f'{line}_binary'] = binar_gene[linesp]
             linesp+=1
+    return(df)
+
+# Function to binarise transcriptional output into 0 and 1. 
+#Uses the best performing between Kmeans in log space and in linear space (based on inertia changes).
+def binarize_quant(df, lines):
+    col_id=df.columns[0]
+
+    df['inertia_change'] = 0.0
+        
+    # Calculate Kmeans binarization in linear and logscale.
+    for i in range(df.shape[0]):
+        RNA_across_lines = np.array(df[lines].iloc[i], dtype=float)
+        kmeans_linear = KMeans(n_clusters=2, init="random").fit(RNA_across_lines.reshape(-1,1))
+        #When computing inertia for a single cluster -trivial- one initialisation is sufficient.
+        kmeans_linear1 = KMeans(n_clusters=1, init="random", n_init=1).fit(RNA_across_lines.reshape(-1,1))
+        if sum(RNA_across_lines==0)==0:
+            kmeans_log = KMeans(n_clusters=2, init="random").fit(np.log(RNA_across_lines.reshape(-1,1)))
+            kmeans_log1 = KMeans(n_clusters=1, init="random", n_init=1).fit(np.log(RNA_across_lines.reshape(-1,1)))
+            loginertia=kmeans_log.inertia_/kmeans_log1.inertia_
+        else:
+            loginertia=1
+        #Choose linear or logarithmic. 
+        linear_inertia=kmeans_linear.inertia_/kmeans_linear1.inertia_
+        if linear_inertia<loginertia:
+            df.loc[i, 'inertia_change'] = linear_inertia
+        else:
+            df.loc[i, 'inertia_change'] = loginertia
+
     return(df)
 
 from sklearn import pipeline
@@ -97,10 +126,10 @@ def binarize_test(df, training_lines, test_line):
     for i in range(df.shape[0]):
         RNA_across_lines = np.array(df[training_lines].iloc[i], dtype=float)
         kmeans_linear = KMeans(n_clusters=2, init="random").fit(RNA_across_lines.reshape(-1,1))
-        kmeans_linear1 = KMeans(n_clusters=1, init="random").fit(RNA_across_lines.reshape(-1,1))
+        kmeans_linear1 = KMeans(n_clusters=1, init="random", n_init=1).fit(RNA_across_lines.reshape(-1,1))
         if sum(RNA_across_lines==0)==0:
             kmeans_log = KMeans(n_clusters=2, init="random").fit(np.log(RNA_across_lines.reshape(-1,1)))
-            kmeans_log1 = KMeans(n_clusters=1, init="random").fit(np.log(RNA_across_lines.reshape(-1,1)))
+            kmeans_log1 = KMeans(n_clusters=1, init="random", n_init=1).fit(np.log(RNA_across_lines.reshape(-1,1)))
             loginertia=kmeans_log.inertia_/kmeans_log1.inertia_
         else:
             loginertia=1
