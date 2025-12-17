@@ -1,5 +1,5 @@
 # hiPSCchromatin-SVM
-Repository for code associated with the paper "Signatures of digital Polycomb regulation in functional iPSC heterogeneity between individuals", Movilla Miangolarra et al., 2025 (https://www.biorxiv.org/content/10.1101/2025.07.25.666753v1, December 2025 version)
+Repository for code associated with the paper "Signatures of digital Polycomb regulation in functional iPSC heterogeneity between individuals", Movilla Miangolarra et al., 2025 (https://www.biorxiv.org/content/10.1101/2025.07.25.666753v1, December 2025 version).
 
 ## Contents
 
@@ -17,7 +17,7 @@ Detailed relation of code and figures:
 | `SVM.ipynb`  | Figs. 3D, 4A-D, 6A-C; Supplementary Figs. 5A-B, 6A-B, 7A-B |
 | `SVM_predictions.ipynb` | Supplementary Figs. 4D, 5C-F |
 | `Mathematical_model.ipynb` | Figs. 5B-C |
-| `pre_ME_SVM_analysis.ipynb` | Figs. 6D, Supplementary Figs. 8A-D |
+| `pre_ME_SVM_analysis.ipynb` | Figs. 6D; Supplementary Figs. 8A-D |
 | `Differentiation prediction` folder  | Figs. 7A-B |
 
 
