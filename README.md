@@ -17,7 +17,7 @@ Detailed relation of code and figures:
 | `SVM.ipynb`  | Figs. 3D, 4A-D, 6A-C; Supplementary Figs. 5A-B, 6A-B, 7A-B |
 | `SVM_predictions.ipynb` | Supplementary Figs. 4D, 5C-F |
 | `Mathematical_model.ipynb` | Figs. 5B-C |
-| `pre_ME_SVM_analysis.ipynb` | Figs. 6D; Supplementary Figs. 8A-D |
+| `pre_ME_SVM_analysis.ipynb` | Fig. 6D; Supplementary Figs. 8A-D |
 | `Differentiation prediction` folder  | Figs. 7A-B |
 
 
