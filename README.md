@@ -13,12 +13,13 @@ Detailed relation of code and figures:
 | Script/Notebook  | Figure |
 | ------------- | ------------- |
 | `Transcription_analysis` folder  | Fig. 2B; Supplementary Fig. 4B  |
-| `PCA.ipynb`  | Figs. 2A, C; Supplementary Fig. 4C |
-| `SVM.ipynb`  | Figs. 3D, 4A-D, 6A-C; Supplementary Figs. 5A-B, 6A-B, 7A-B |
-| `SVM_predictions.ipynb` | Supplementary Figs. 4D, 5C-F |
+| `PCA.ipynb`  | Figs. 2A, C; Supplementary Fig. 5A |
+| `SVM.ipynb`  | Figs. 3D, 4A-D, 6A-C; Supplementary Figs. 6B-C, 7A-B, 8A-B |
+| `SVM_predictions.ipynb` | Supplementary Figs. 6A, 6D-G |
 | `Mathematical_model.ipynb` | Figs. 5B-C |
-| `pre_ME_SVM_analysis.ipynb` | Fig. 6D; Supplementary Figs. 8A-D |
-| `Differentiation prediction` folder  | Figs. 7A-B |
+| `pre_ME_SVM_analysis.ipynb` | Fig. 6D; Supplementary Figs. 9A-D |
+| `SVM_rediction_6lines.ipynb` | Supplementary Fig. 6H |
+| `Differentiation prediction` folder  | Figs. 7A-C |
 
 
 ### Main functions -- usage in other datasets
